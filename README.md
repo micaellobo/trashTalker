@@ -12,13 +12,7 @@ Este projeto tem como objetivo desenvolver uma aplicação que seja capaz de ger
 
 
 Toda a documentação está
-disponivel [aqui](https://gitlab.estg.ipp.pt/lds_2021/trash_talker_group_7/tree/master/Documentacao)
-
-
-<div align="center"><h2>Vídeo de Apresentação</h2><a name="video" id="video"> </a> </div>
-
-![](https://gitlab.estg.ipp.pt/lds_2021/trash_talker_group_7/raw/master/VideoApresenta%C3%A7%C3%A3o.mp4)
-
+disponivel [aqui](https://github.com/micaellobo/trashTalker/tree/master/Documentacao)
 
 ## **Como Iniciar o Projeto?**
 
@@ -62,7 +56,7 @@ Para iniciar o projeto devem ser seguidos os seguintes passos:
 
 ## **Arquitetura do projeto**
 
-<img src="http://gitlab.estg.ipp.pt/lds_2021/trash_talker_group_7/raw/master/Documentacao/Diagramas/ProjectArchitecture.png" alt="ProjectArchitecture" width="900"/>
+<img src="https://github.com/micaellobo/trashTalker/raw/master/Documentacao/Diagramas/ProjectArchitecture.png" alt="ProjectArchitecture" width="900"/>
 
 
 ### **Escola Superior de Tecnologia e Gestão - P.Porto**
