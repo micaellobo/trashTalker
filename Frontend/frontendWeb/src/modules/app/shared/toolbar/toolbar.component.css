@@ -1,0 +1,68 @@
+.main-containerA {
+    display: flex;
+    flex-direction: column;
+}
+
+.top-barA {
+    background-color: #116149;
+    color: #f9fbfa;
+    height: 30px;
+    text-align: center;
+}
+
+.bottom-barA {
+    display: grid;
+    grid-template-columns: 20% auto 20%;
+    background-color: #f9fbfa;
+    height: 80px;
+}
+
+mat-icon {
+    font-size: 45px;
+    padding-bottom: 43px;
+    padding-right: 0px;
+    color: #21313c;
+}
+
+.highlight-titleA {
+    font-family: Georgia, Serif;
+    font-size: 37px;
+    color: #21313c;
+}
+
+.logoA {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 230px;
+}
+
+.usernameA {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    font-family: Georgia, Serif;
+    font-size: 27px;
+    color: #21313c;
+}
+
+.b {
+    margin: 10px;
+}
+
+@media (max-width: 1350px) {
+    .changeLogout {
+        display: none;
+    }
+
+    .show {
+        visibility: visible !important;
+        display: inline-block !important;
+    }
+
+    .show:hover {
+        cursor:pointer;
+    }
+}

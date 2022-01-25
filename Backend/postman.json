@@ -1,0 +1,911 @@
+{
+	"info": {
+		"_postman_id": "eac19576-aba1-4f02-9426-3f0a9c0dec22",
+		"name": "TrashTalker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "RecycleBin",
+			"item": [
+				{
+					"name": "Adicionar Ecoponto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenManager}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"street\": \"Rua Dr.Braulio Caldas\",\r\n  \"city\": \"Vizela\",\r\n  \"zipCode\": \"4815-478\",\r\n  \"country\": \"Portugal\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/v1/recyclebin",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"v1",
+								"recyclebin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter Todos Ecopontos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenManager}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/v1/recyclebin/all",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"v1",
+								"recyclebin",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter Ecoponto por Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/v1/recyclebin/b88d277e-d8bc-4f04-85ca-0dac3db05ef9",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"v1",
+								"recyclebin",
+								"b88d277e-d8bc-4f04-85ca-0dac3db05ef9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Desativar Ecoponto",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/v1/recyclebin/b88d277e-d8bc-4f04-85ca-0dac3db05ef9",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"v1",
+								"recyclebin",
+								"b88d277e-d8bc-4f04-85ca-0dac3db05ef9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter Ecopontos Ativos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/v1/recyclebin/active",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"v1",
+								"recyclebin",
+								"active"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Ecoponto",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"b88d277e-d8bc-4f04-85ca-0dac3db05ef9\",\r\n  \"longit\": 2330.2,\r\n  \"latit\": 2340.2,\r\n  \"street\": \"string\",\r\n  \"city\": \"4815-322\",\r\n  \"zipCode\": \"string\",\r\n  \"country\": \"Espanha\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/v1/recyclebin",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"v1",
+								"recyclebin"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Container",
+			"item": [
+				{
+					"name": "Criar Contentor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"typeOfWaste\": \"PAPER\",\r\n  \"height\": 50,\r\n  \"width\": 50,\r\n  \"depth\": 50,\r\n  \"idRecBin\":\"22866888-5053-4fa2-9a8c-297b3708608a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/v1/container",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"v1",
+								"container"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter contentores",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenManager}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/v1/container",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"v1",
+								"container"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter Contentor por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/v1/container/07ebcea5-8b50-4960-92f9-f1b72d8aa200",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"v1",
+								"container",
+								"07ebcea5-8b50-4960-92f9-f1b72d8aa200"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pickings",
+			"item": [
+				{
+					"name": "Criar Recolha",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"volumeRecolhido\": 0,\n    \"containerId\": \"d28c0214-b022-4118-e623-08d9b7261eeb\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/v1/picking",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"v1",
+								"picking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter Recolhas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/v1/picking",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"v1",
+								"picking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter Recolha por Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/v1/picking/c10465e7-5ac9-4e3f-3989-08d9b422067f",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"v1",
+								"picking",
+								"c10465e7-5ac9-4e3f-3989-08d9b422067f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Recolha",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"volumeRecolhido\": 999999,\n    \"containerId\": \"da43a6a3-6316-4b3a-b371-22f6240798ad\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/v1/picking/0f9f8c07-7357-42c0-a070-08d9b427aeca",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"v1",
+								"picking",
+								"0f9f8c07-7357-42c0-a070-08d9b427aeca"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"employee\",\n    \"password\": \"employee\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/v1/login",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"v1",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Adicionar Utilizador",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"manager\",\r\n    \"password\":\"manager\",\r\n    \"firstname\":\"joao\",\r\n    \"lastname\":\"lopes\",\r\n    \"email\":\"joao@lopes.com\",\r\n    \"gender\":\"male\",\r\n    \"street\":\"rua A\",\r\n    \"city\":\"Moreira\",\r\n    \"zipcode\":\"4815-222\",\r\n    \"country\":\"Portugal\",\r\n    \"role\":\"manager\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/v1/user",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter Utilizadors",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenManager}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/v1/user",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Utilizador",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"status\": \"Active\",\r\n        \"username\": \"joao\",\r\n        \"firstName\": \"joao\",\r\n        \"lastName\": \"lopes\",\r\n        \"email\": \"joaofred@lopes.com\",\r\n        \"gender\": \"Male\",\r\n        \"street\": \"rua A\",\r\n        \"city\": \"Moreira\",\r\n        \"zipCode\": \"4815-222\",\r\n        \"country\": \"Portugal\",\r\n        \"role\": \"Employee\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/v1/user/126ca86a-edf5-4beb-8083-60937fa5f2ec",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"126ca86a-edf5-4beb-8083-60937fa5f2ec"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Arduino",
+			"item": [
+				{
+					"name": "Gerar Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n    \"grant_type\":\"client_credentials\",\r\n    \"client_id\":\"2aeUptMIGl6tViCt1CE0uzQuHIKywuKB\",\r\n    \"client_secret\":\"uYuBiIiRETWHaZpwvfCf7dhd4DIZM78UHq1pBaNPwKLzK2j3BBzYcJ5XDKY2PDQi\",\r\n    \"audience\":\"https://api2.arduino.cc/iot\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api2.arduino.cc/iot/v1/clients/token",
+							"protocol": "https",
+							"host": [
+								"api2",
+								"arduino",
+								"cc"
+							],
+							"path": [
+								"iot",
+								"v1",
+								"clients",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter medição",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJodHRwczovL2FwaTIuYXJkdWluby5jYy9pb3QiLCJhenAiOiIyYWVVcHRNSUdsNnRWaUN0MUNFMHV6UXVISUt5d3VLQiIsImV4cCI6MTYzOTMyNzc5MCwiZ3R5IjoiY2xpZW50LWNyZWRlbnRpYWxzIiwiaHR0cDovL2FyZHVpbm8uY2MvY2xpZW50X2lkIjoibGRzcHJvamVjdCIsImh0dHA6Ly9hcmR1aW5vLmNjL2lkIjoiYjdhMDZlMmMtOWQwMC00MGNhLTllNjAtZjJkMWYyMDEzZGYyIiwiaHR0cDovL2FyZHVpbm8uY2MvcmF0ZWxpbWl0IjoxLCJodHRwOi8vYXJkdWluby5jYy91c2VybmFtZSI6Imxkc3Byb2plY3QiLCJpYXQiOjE2MzkzMjc0OTAsInN1YiI6IjJhZVVwdE1JR2w2dFZpQ3QxQ0UwdXpRdUhJS3l3dUtCQGNsaWVudHMifQ.7TCFqgntjaCcyQfkTngOr4jwwGTKZQNLDqmnxxHOQjs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api2.arduino.cc/iot/v2/dashboards?dashboard&2aeUptMIGl6tViCt1CE0uzQuHIKywuKB",
+							"protocol": "https",
+							"host": [
+								"api2",
+								"arduino",
+								"cc"
+							],
+							"path": [
+								"iot",
+								"v2",
+								"dashboards"
+							],
+							"query": [
+								{
+									"key": "dashboard",
+									"value": ""
+								},
+								{
+									"key": "2aeUptMIGl6tViCt1CE0uzQuHIKywuKB",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar Variavel",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJodHRwczovL2FwaTIuYXJkdWluby5jYy9pb3QiLCJhenAiOiIyYWVVcHRNSUdsNnRWaUN0MUNFMHV6UXVISUt5d3VLQiIsImV4cCI6MTYzOTEzNzY4OSwiZ3R5IjoiY2xpZW50LWNyZWRlbnRpYWxzIiwiaHR0cDovL2FyZHVpbm8uY2MvY2xpZW50X2lkIjoibGRzcHJvamVjdCIsImh0dHA6Ly9hcmR1aW5vLmNjL2lkIjoiYjdhMDZlMmMtOWQwMC00MGNhLTllNjAtZjJkMWYyMDEzZGYyIiwiaHR0cDovL2FyZHVpbm8uY2MvcmF0ZWxpbWl0IjoxLCJodHRwOi8vYXJkdWluby5jYy91c2VybmFtZSI6Imxkc3Byb2plY3QiLCJpYXQiOjE2MzkxMzczODksInN1YiI6IjJhZVVwdE1JR2w2dFZpQ3QxQ0UwdXpRdUhJS3l3dUtCQGNsaWVudHMifQ.x5NkOmxb6AIa_-_c2M7pRokryKrugsdFiVN-iou8iD4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"container\",\t\r\n    \"permission\":\"READ_ONLY\",\r\n    \"persist\":true,\t\r\n    \"type\":\"INT\",\r\n    \"update_parameter\":\t3,\r\n    \"update_strategy\":\"ON_CHANGE\",\r\n    \"variable_name\":\"teste\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api2.arduino.cc/iot/v2/things/9743d6b0-fb0e-4cd8-a9c4-57639698967f/properties",
+							"protocol": "https",
+							"host": [
+								"api2",
+								"arduino",
+								"cc"
+							],
+							"path": [
+								"iot",
+								"v2",
+								"things",
+								"9743d6b0-fb0e-4cd8-a9c4-57639698967f",
+								"properties"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Routes",
+			"item": [
+				{
+					"name": "Adicionar Rota Manual",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenManager}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Teste 1\",\r\n    \"dateBegin\": \"2021-12-24T18:00:00.000Z\",\r\n    \"employeeId\": \"dc06815f-bac7-42bf-b979-5cc768b745ac\",\r\n    \"recycleBinIds\": [\r\n        \"87d27990-4ad4-4463-a844-a9f85d67f300\",\r\n        \"87d27990-4ad4-4463-a844-a9f85d67f301\",\r\n        \"87d27990-4ad4-4463-a844-a9f85d67f302\",\r\n        \"87d27990-4ad4-4463-a844-a9f85d67f303\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/v1/routes",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"v1",
+								"routes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter rotas",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenManager}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/v1/routes",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"v1",
+								"routes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter Rotas com login Funcionario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenEmployee}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/v1/routes/myRoutes",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"v1",
+								"routes",
+								"myRoutes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter Rota por Id com login Funcionario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenEmployee}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/v1/routes/myRoutes/1d373701-d7d8-43e9-b47e-60d047dfac7",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"v1",
+								"routes",
+								"myRoutes",
+								"1d373701-d7d8-43e9-b47e-60d047dfac7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Start Route",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenEmployee}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/v1/routes/start/a6c6f490-79e3-44a2-baf0-36256eddd57b",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"v1",
+								"routes",
+								"start",
+								"a6c6f490-79e3-44a2-baf0-36256eddd57b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adicionar Rota Automatica",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenManager}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"dateBegin\": \"2021-12-24T18:00:00.000Z\",\n    \"employeeId\": \"dc06815f-bac7-42bf-b979-5cc768b745ac\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/v1/routes/auto",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"v1",
+								"routes",
+								"auto"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "tokenManager",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Im1hbmFnZXIiLCJuYW1laWQiOiJjZDk2MDhkNi1mZDhmLTRjZjMtYjYxMy0xOWQxOTE0YWJkZGEiLCJyb2xlIjoiTUFOQUdFUiIsIm5iZiI6MTY0MDAyODMyMywiZXhwIjoxNjcxNTY0MzIzLCJpYXQiOjE2NDAwMjgzMjN9.GuBw6W9zCJE3cDpPOxAGeQmfxOtJVJLSkgBeCsvEF1g"
+		},
+		{
+			"key": "tokenEmployee",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImVtcGxveWVlIiwibmFtZWlkIjoiZGMwNjgxNWYtYmFjNy00MmJmLWI5NzktNWNjNzY4Yjc0NWFjIiwicm9sZSI6IkVNUExPWUVFIiwibmJmIjoxNjQwMDI4MzM5LCJleHAiOjE2NzE1NjQzMzksImlhdCI6MTY0MDAyODMzOX0.kZXVnjVomH5Aja7c6uH5kNPnhQ0t6NPvmlhvV1598Fc"
+		}
+	]
+}

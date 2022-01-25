@@ -1,0 +1,186 @@
+<div class="containerA">
+  <div class="flex-row">
+    <div class="title">
+      <mat-icon>pin_drop</mat-icon>
+      <span>Rotas</span>
+    </div>
+    <button type="button" class="btn btn-success" (click)="openPlanningRoute()">Planear Rota</button>
+  </div>
+  <mat-tab-group class="rotas">
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <i class="bi bi-truck mat-icone"></i>
+        <label>Rotas a Decorrer</label>
+      </ng-template>
+      <div class="DivToScroll">
+        <table class="table table-hover">
+          <thead class="top-table">
+            <tr>
+              <th scope="col">Nome</th>
+              <th scope="col">Data de Inicio</th>
+              <th scope="col">Distância Estimada</th>
+              <th scope="col">Duração Estimada</th>
+              <th scope="col">Nº De Ecopontos</th>
+              <th scope="col">Tipo de Rota</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let route of onGoingRoutes" (click)="selectRecycleBin(route)">
+              <td>{{ route.name }}</td>
+              <td>{{ route.dateBegin.slice(0,19) }}</td>
+              <td>{{ route.distanceEstimatedKm/1000 }} Km </td>
+              <td>{{ route.estimatedDuration }}</td>
+              <td>{{ route.recycleBins.length }}</td>
+              <td>{{ route.typeCreation }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <i class="bi bi-calendar-event mat-icone"></i>
+        <label>Rotas Planeadas</label>
+      </ng-template>
+      <div class="DivToScroll">
+        <table class="table table-hover">
+          <thead class="top-table">
+            <tr>
+              <th scope="col">Nome</th>
+              <th scope="col">Data de Inicio</th>
+              <th scope="col">Distância Estimada</th>
+              <th scope="col">Duração Estimada</th>
+              <th scope="col">Nº De Ecopontos</th>
+              <th scope="col">Tipo de Rota</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let route of plannedRoutes" (click)="selectRecycleBin(route)">
+              <td>{{ route.name }}</td>
+              <td>{{ route.dateBegin.slice(0,19) }}</td>
+              <td>{{ route.distanceEstimatedKm/1000 }} Km </td>
+              <td>{{ route.estimatedDuration }}</td>
+              <td>{{ route.recycleBins.length }}</td>
+              <td>{{ route.typeCreation }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <i class="bi bi-calendar-x mat-icone"></i>
+        <label>Rotas Canceladas</label>
+      </ng-template>
+      <div class="DivToScroll">
+        <table class="table table-hover">
+          <thead class="top-table">
+            <tr>
+              <th scope="col">Nome</th>
+              <th scope="col">Data de Inicio</th>
+              <th scope="col">Distância Estimada</th>
+              <th scope="col">Duração Estimada</th>
+              <th scope="col">Nº De Ecopontos</th>
+              <th scope="col">Tipo de Rota</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let route of CanceledRoutes" (click)="selectRecycleBin(route)">
+              <td>{{ route.name }}</td>
+              <td>{{ route.dateBegin.slice(0,19) }}</td>
+              <td>{{ route.distanceEstimatedKm/1000 }} Km </td>
+              <td>{{ route.estimatedDuration }}</td>
+              <td>{{ route.recycleBins.length }}</td>
+              <td>{{ route.typeCreation }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <i class="bi bi-calendar-check mat-icone"></i>
+        <label>Rotas Terminadas</label>
+      </ng-template>
+      <div class="DivToScroll">
+        <table class="table table-hover">
+          <thead class="top-table">
+            <tr>
+              <th scope="col">Nome</th>
+              <th scope="col">Data de Inicio</th>
+              <th scope="col">Distância Estimada</th>
+              <th scope="col">Duração Estimada</th>
+              <th scope="col">Nº De Ecopontos</th>
+              <th scope="col">Tipo de Rota</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let route of finishedRoutes" (click)="selectRecycleBin(route)">
+              <td>{{ route.name }}</td>
+              <td>{{ route.dateBegin.slice(0,19) }}</td>
+              <td>{{ route.distanceEstimatedKm/1000 }} Km </td>
+              <td>{{ route.estimatedDuration }}</td>
+              <td>{{ route.recycleBins.length }}</td>
+              <td>{{ route.typeCreation }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+
+  <div class="flex-column">
+    <span>Mapa de Rotas</span>
+    <span class="selectedRoute">({{actualRouteName}})</span>
+    <mat-divider></mat-divider>
+    <div class="mapa">
+      <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+        <agm-marker *ngFor="let bins of listRecBin;let i=index" [latitude]="bins.latit" [longitude]="bins.longit"
+          [iconUrl]="{
+              url: './././assets/images/bins.png',
+              scaledSize: {
+                height: 30,
+                width: 30,
+                equals: marker
+              }}" (markerClick)="openInfo(bins.id)" (mouseOver)="onMouseOver(i)">
+          <agm-info-window [latitude]="bins.latit" [longitude]="bins.longit" [isOpen]="bins.display">
+            ID: {{bins.id}} <br> Rua: {{bins.street}} <br> Cod-Postal: {{bins.zipCode}}<br> Cidade: {{bins.city}}
+          </agm-info-window>
+        </agm-marker>
+        <!--Criar um marker para o ponto de partida e chegada-->
+        <agm-marker [latitude]="startFinishLat" [longitude]="startFinishLng" [iconUrl]="{
+              url: './././assets/images/finishFlag.png',
+              scaledSize: {
+                height: 30,
+                width: 30,
+                equals: marker
+              }}">
+        </agm-marker>
+
+        <agm-polyline [visible]="false" [strokeWeight]="3" [strokeColor]="'#0fabff'" *ngIf="isRouteSelected"
+          [visible]="true">
+          <agm-polyline-point *ngFor="let recbin of listRecBin" [latitude]="+recbin.latit" [longitude]="+recbin.longit">
+          </agm-polyline-point>
+        </agm-polyline>
+
+        <!--Desenhar ligação entre ponto de partida e o primeiro ecoponto-->
+        <agm-polyline [visible]="false" [strokeWeight]="3" [strokeColor]="'#07b57a'" *ngIf="isRouteSelected" [visible]="true">
+          <agm-polyline-point [latitude]="+startFinishLat" [longitude]="+startFinishLng">
+          </agm-polyline-point>
+          <agm-polyline-point [latitude]="+firstRecBin.latit" [longitude]="+firstRecBin.longit">
+          </agm-polyline-point>
+        </agm-polyline>
+
+        <!--Desenhar ligação entre ponto de partida e o último ecoponto-->
+        <agm-polyline [visible]="false" [strokeWeight]="3"  [strokeOpacity]="0.7" [strokeColor]="'#181a19'" *ngIf="isRouteSelected" [visible]="true">
+          <agm-polyline-point [latitude]="+startFinishLat" [longitude]="+startFinishLng">
+          </agm-polyline-point>
+          <agm-polyline-point [latitude]="+lastRecBin.latit" [longitude]="+lastRecBin.longit">
+          </agm-polyline-point>
+        </agm-polyline>
+
+      </agm-map>
+    </div>
+  </div>
+  <br>
+</div>

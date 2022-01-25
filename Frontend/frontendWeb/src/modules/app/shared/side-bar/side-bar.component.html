@@ -1,0 +1,26 @@
+<div class="containerA">
+    <div class="itemA" *ngIf="asPermission()" (click)="selectHomePageSection()">
+        <mat-icon aria-hidden="false"  aria-label="Example home icon">home </mat-icon>
+        <a class="textA">Home Page</a>
+    </div>
+    <div class="itemA" (click)="selectEmployeesSection()">
+        <mat-icon aria-hidden="false"  aria-label="Example home icon">person </mat-icon>
+        <a class="textA">Funcionarios</a>
+    </div>
+    <div class="itemA" *ngIf="asPermission()" (click)="selectRecycleBinsSection()">
+        <mat-icon aria-hidden="false"  aria-label="Example home icon">delete_outline</mat-icon>
+        <a class="textA">Ecopontos</a>
+    </div>
+    <div class="itemA"  *ngIf="asPermission()" (click)="selectRoutesSection()">
+        <mat-icon aria-hidden="false"  aria-label="Example home icon">pin_drop</mat-icon>
+        <a class="textA">Rotas</a>
+    </div>
+    <div class="itemA" *ngIf="asPermission()" (click)="selectDashboardsSection()">
+        <mat-icon aria-hidden="false"  aria-label="Example home icon">dashboard</mat-icon>
+        <a class="textA">Dashboard</a>
+    </div>
+    <div class="itemA" *ngIf="asPermission()" (click)="selectAlertsSection()">
+        <mat-icon>warning</mat-icon>
+        <a class="textA">Alertas</a>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="main-containerA">
+  <div class="top-barA">
+    <h4>Para mais informações contacte ldsgroup@trashtalker.com</h4>
+  </div>
+  <div class="bottom-barA">
+    <div class="logoA">
+      <a [routerLink]="['/home']">
+        <mat-icon aria-hidden="false">restore_from_trash</mat-icon>
+      </a>
+      <div [routerLink]="['/home']">
+        <span class="highlight-titleA">TrashTalker</span>
+      </div>
+    </div>
+    <div></div>
+    <span class="usernameA">
+            {{username}}
+      <button (click)="logout()" type="button" class="btn btn-outline-danger b changeLogout">Terminar sessão</button>
+            <mat-icon (click)="logout()" class="show" style="visibility: hidden; display: none;" aria-hidden="false">exit_to_app</mat-icon>
+        </span>
+  </div>
+</div>

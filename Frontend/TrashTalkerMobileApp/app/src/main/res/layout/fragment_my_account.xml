@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                app:cornerRadius="18dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"></ImageView>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtFirstName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:drawableLeft="@drawable/ic_baseline_supervised_user_circle_24"
+                android:drawablePadding="10dp"
+                android:hint="Flavio Costa"
+                android:enabled="false"
+                android:paddingLeft="30dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtLastName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:drawableLeft="@drawable/ic_baseline_supervised_user_circle_24"
+                android:drawablePadding="10dp"
+                android:hint="Flavio Costa"
+                android:enabled="false"
+                android:paddingLeft="30dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:drawableLeft="@drawable/ic_baseline_email_24"
+                android:drawablePadding="10dp"
+                android:hint="flaviojmc8@gmail.com"
+                android:paddingLeft="30dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtStreet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:drawableLeft="@drawable/ic_baseline_contact_phone_24"
+                android:drawablePadding="10dp"
+                android:hint="Rua A"
+                android:paddingLeft="30dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtCity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:drawableLeft="@drawable/ic_baseline_contact_phone_24"
+                android:drawablePadding="10dp"
+                android:hint="Felgueiras"
+                android:paddingLeft="30dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtZipCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:drawableLeft="@drawable/ic_baseline_contact_phone_24"
+                android:drawablePadding="10dp"
+                android:hint="4815-322"
+                android:paddingLeft="30dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtCountry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:drawableLeft="@drawable/ic_baseline_contact_phone_24"
+                android:drawablePadding="10dp"
+                android:hint="Portugal"
+                android:paddingLeft="30dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:drawableLeft="@drawable/ic_baseline_remove_red_eye_24"
+                android:drawableRight="@drawable/ic_baseline_autorenew_24"
+                android:drawablePadding="10dp"
+                android:hint="Password"
+                android:paddingLeft="30dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:inputType="textPassword"/>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtNewPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:drawableLeft="@drawable/ic_baseline_remove_red_eye_24"
+                android:drawablePadding="10dp"
+                android:hint="New Password"
+                android:inputType="textPassword"
+                android:paddingLeft="30dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="60dp"
+                android:gravity="center">
+                <Button
+                    android:id="@+id/btnUpdateUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp"
+                    app:cornerRadius="18dp"
+                    android:drawableRight="@drawable/ic_baseline_check_circle_outline_24"
+                    android:text="Save Changes" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
+
+
+

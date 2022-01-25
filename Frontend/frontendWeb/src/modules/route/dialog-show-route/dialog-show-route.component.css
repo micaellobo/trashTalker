@@ -1,0 +1,50 @@
+agm-map {
+    height: 500px;
+    width: auto;
+}
+
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+
+button{
+    align-self: flex-end;
+}
+
+.flex-col > div> mat-label {
+    font-weight: bold;
+  }
+  
+.flex-col > div{
+    padding: 10px;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+mat-icon{
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+.line-header{
+    display: flex;
+}
+
+.flex-row{
+    display: flex;
+    justify-content: space-between;
+}
+
+.mapa{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 400px;
+}
+
+  
+
+

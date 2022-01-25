@@ -1,0 +1,182 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="containerA">
+    <div class="title">
+      <div class="titleText">
+        <i class="fa fa-trash" style="font-size: 2rem; color:#001e2bd5;"></i>
+        <span>Ecopontos</span>
+      </div>
+
+      <form class="example-form">
+          <input type="text"
+          placeholder="Ecoponto..."
+          aria-label="Number"
+          matInput
+          class="inputText"
+          [formControl]="myControl"
+          [matAutocomplete]="auto">
+           <mat-autocomplete #auto="matAutocomplete">
+           <mat-option *ngFor="let option of listRecycleBins" >
+             {{option.id}}
+           </mat-option>
+         </mat-autocomplete>
+         <i class="bi bi-search"></i>
+      </form>
+    </div>
+    <div class="DivToScroll">
+      <table class="table table-hover">
+        <thead class="top-table">
+          <tr>
+            <th scope="col">Estado</th>
+            <th scope="col">Rua</th>
+            <th scope="col">Cidade</th>
+            <th scope="col">País</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let e of listRecycleBins" (click)="selectRB(e)">
+            <td>{{ e.status }}</td>
+            <td>{{ e.street }}</td>
+            <td>{{ e.city }}</td>
+            <td>{{ e.country }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  <div class="bottom-section">
+    <span>Informações</span>
+    <div class="menu-options">
+      <div class="fs-6 mb-1" (click)=addRecycleBin()>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#21313c" class="bi bi-plus-square" viewBox="0 0 16 16">
+          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+      <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+    </svg>
+        Novo
+      </div>
+      <div class="fs-6 mb-1" (click)=disableRecycleBin()>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#21313c" class="bi bi-plus-square" viewBox="0 0 16 16">
+          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+          <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+    </svg>
+        Desativar
+      </div>
+      <div class="fs-6 mb-1" (click)=ativateRecBin()>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#21313c" class="bi bi-plus-square" viewBox="0 0 16 16">
+          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+          <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+        </svg>
+        Ativar
+      </div>
+    </div>
+    </div>
+
+
+      <form class="formDetails">
+        <div>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label>Estado</label>
+              <input class="form-control" placeholder={{selectedRecycleBin.status}} readonly>
+            </div>
+            <div class="form-group col-md-4">
+              <label>Código Postal</label>
+              <input class="form-control" placeholder={{selectedRecycleBin.zipCode}} readonly>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="inputPassword4">País</label>
+              <input class="form-control" placeholder={{selectedRecycleBin.country}} readonly>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-7">
+              <label>Rua</label>
+              <input class="form-control" placeholder={{selectedRecycleBin.street}} readonly>
+            </div>
+            <div class="form-group col-md-5">
+              <label>Cidade</label>
+              <input class="form-control" placeholder={{selectedRecycleBin.city}} readonly>
+            </div>
+          </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-3">
+            <label>{{container0Type}}</label>
+            <input class="form-control" placeholder="{{selectedRecycleBin.containers[0].percentageOccupied}}%" readonly>
+
+              <div class="popover__wrapper">
+                <a href="https://localhost:5001/api/v1/images/{{recBin.containerDtos[0].id}}" download="GFG" width="100">
+                  <button type="button" class="fa fa-download"> QR Code  </button>
+                </a>
+                <div class="popover__content">
+                  <p class="popover__message">QRcode Papel</p>
+                  <img alt="QRcode Papel" src="https://localhost:5001/api/v1/images/{{recBin.containerDtos[0].id}}" width="100">
+                </div>
+              </div>
+
+          </div>
+          <div class="form-group col-md-3">
+            <label>{{container1Type}}</label>
+            <input class="form-control" placeholder="{{selectedRecycleBin.containers[1].percentageOccupied}}%" readonly>
+
+            <div class="popover__wrapper">
+              <a href="https://localhost:5001/api/v1/images/{{recBin.containerDtos[1].id}}" download="GFG" width="100">
+                <button type="button" class="fa fa-download"> QR Code </button>
+              </a>
+              <div class="popover__content">
+                <p class="popover__message">QRcode Vidro</p>
+                <img alt="QRcode Vidro" src="https://localhost:5001/api/v1/images/{{recBin.containerDtos[1].id}}" width="100">
+              </div>
+            </div>
+
+          </div>
+          <div class="form-group col-md-3">
+            <label>{{container2Type}}</label>
+            <input class="form-control" placeholder="{{selectedRecycleBin.containers[2].percentageOccupied}}%"readonly>
+
+            <div class="popover__wrapper">
+              <a href="https://localhost:5001/api/v1/images/{{recBin.containerDtos[2].id}}" download="GFG" width="100">
+                <button type="button" class="fa fa-download"> QR Code  </button>
+              </a>
+              <div class="popover__content">
+                <p class="popover__message">QRcode Metal</p>
+                <img alt="QRcode Plastico/Metal" src="https://localhost:5001/api/v1/images/{{recBin.containerDtos[2].id}}" width="100">
+              </div>
+            </div>
+
+          </div>
+          <div class="form-group col-md-3">
+            <label >{{container3Type}}</label>
+            <input class="form-control" placeholder="{{selectedRecycleBin.containers[3].percentageOccupied}}%" readonly>
+
+            <div class="popover__wrapper">
+              <a href="https://localhost:5001/api/v1/images/{{recBin.containerDtos[3].id}}" download="GFG" width="100">
+                <button  type="button" class="fa fa-download"> QR Code  </button>
+              </a>
+              <div class="popover__content">
+                <p class="popover__message">QRcode Indif</p>
+                <img alt="QRcode Indiferenciado" src="https://localhost:5001/api/v1/images/{{recBin.containerDtos[3].id}}" width="100">
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        </div>
+          <div class="chart">
+            <google-chart #chart
+            [title]="title"
+            [type]="type"
+            [data]="data"
+            [columns]="columnNames"
+            [options]="options"
+            [width]="width"
+            [height]="height">
+            </google-chart>
+          </div>
+        </form>
+  </div>
+

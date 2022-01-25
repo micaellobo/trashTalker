@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+</head>
+
+<div class="top-barA">
+    <h4>Para mais informações contacte ldsgroup@trashtalker.com</h4>
+</div>
+
+<body class="text-center">
+    <main class="form-signin">
+        <form>
+            <img class="mb-4" src="../../../assets/images/Logo1-removebg.png" alt="" width="300" height="150" />
+            <h1 class="h3 mb-3 fw-normal" style="font-size: 35px; font-style: italic;">Login</h1>
+            
+            <div class="form-floating">
+                <input [(ngModel)]="requestLogin.username" [ngModelOptions]="{standalone: true}" type="email"
+                    class="form-control" id="floatingInput" placeholder="name@example.com" />
+                <label for="floatingInput">Utilizador</label>
+            </div>
+            <div class="form-floating">
+                <input [(ngModel)]="requestLogin.password" [ngModelOptions]="{standalone: true}" type="password"
+                    class="form-control" id="floatingPassword" placeholder="Password" />
+                <label for="floatingPassword">Palavra-Passe</label>
+            </div>
+
+            <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" value="remember-me" /> Lembrar
+                </label>
+            </div>
+            <button (click)="doLogin()" class="button w-100 btn btn-lg btn-success color" type="submit">
+                Entrar
+            </button> 
+            <p class="mt-5 mb-3 text-muted">&copy; 2021–2022</p>
+        </form>
+    </main>
+</body>
+
+</html>

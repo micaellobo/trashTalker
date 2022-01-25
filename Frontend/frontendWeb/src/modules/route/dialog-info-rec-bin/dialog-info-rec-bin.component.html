@@ -1,0 +1,26 @@
+<div class="flex-row">
+  <mat-icon>info</mat-icon>
+  <span mat-dialog-title>Estado Atual do Ecoponto </span>
+</div>
+
+  <div class="layout">
+    <div class="alerta" [style.display]="hide" >
+        <div class="flex-row-alert">
+          <mat-icon>report</mat-icon>
+          <h3>Alerta: </h3>
+      </div>
+      <p>Contentor(es):</p>
+      <span>{{alert}} tem taxa de ocupação acima de {{perc}}% !</span>
+    </div>
+    <google-chart [data]="data"
+    [columns]="columnNames"
+    [title]="title"
+    [width]="width"
+    [height]="height"
+    [type]="type"
+    [options]="options">
+</google-chart>
+<div class="flex-row-center" mat-dialog-actions>
+  <button type="button" class="btn btn-secondary btn-sm" (click)="cancel()">Sair</button>
+</div>
+</div>

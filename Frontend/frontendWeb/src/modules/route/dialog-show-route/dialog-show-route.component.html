@@ -1,0 +1,82 @@
+<div class="flex-column">
+  <div class="flex-row">
+    <div class="line-header">
+      <span mat-dialog-title>Informações Rota Gerada </span>
+      <mat-icon>help</mat-icon>
+    </div>
+    <div>
+      <button type="button" class="btn btn-danger m-2" (click)="cancelRoute()">Cancelar</button>
+      <button type="button" class="btn btn-success" (click)="confirm()">Confirmar</button>
+    </div>
+  </div>
+  <div class="flex-col" mat-dialog-content>
+    <div>
+      <mat-label>Funcionário Responsável:</mat-label>
+      <span> {{generatedRoute.employee.firstName}} {{generatedRoute.employee.lastName}}</span>
+    </div>
+    <div>
+      <mat-label>Duração estimada:</mat-label>
+      <span> {{generatedRoute.estimatedDuration}} h</span>
+    </div>
+    <div>
+      <mat-label>Distância estimada:</mat-label>
+      <span> {{generatedRoute.distanceEstimatedKm / 1000}} km</span>
+    </div>
+  </div>
+  <div class="mapa">
+    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+      <!--Criar markers para todos os ecopontos da rota-->
+      <agm-marker *ngFor="let bins of listRecBin; let i = index" [latitude]="bins.latit" [longitude]="bins.longit"
+                  [iconUrl]="{
+      url: './././assets/images/bins.png',
+      scaledSize: {
+        height: 30,
+        width: 30,
+        equals: marker
+      }
+    }" (markerClick)="openInfo(bins.id)" (mouseOver)="onMouseOver(i)">
+        <agm-info-window [latitude]="bins.latit" [longitude]="bins.longit" [isOpen]="bins.display">
+          ID: {{ bins.id }} <br/>
+          Rua: {{ bins.street }} <br/>
+          Cod-Postal: {{ bins.zipCode }}<br/>
+          Cidade: {{ bins.city }}
+        </agm-info-window>
+      </agm-marker>
+
+      <!--Criar ligacoes entre os ecopontos-->
+      <agm-polyline [strokeWeight]="3" [strokeColor]="'#0fabff'" [visible]="true">
+        <agm-polyline-point *ngFor="let recbin of listRecBin" [latitude]="+recbin.latit" [longitude]="+recbin.longit">
+        </agm-polyline-point>
+      </agm-polyline>
+
+      <!--Criar um marker para o ponto de partida e chegada-->
+      <agm-marker [latitude]="+startFinishLat" [longitude]="+startFinishLng" [iconUrl]="{
+        url: './././assets/images/finishFlag.png',
+        scaledSize: {
+          height: 40,
+          width: 40,
+          equals: marker
+        }
+      }">
+      </agm-marker>
+
+      <!--Desenhar ligação entre ponto de partida e o primeiro ecoponto-->
+      <agm-polyline [visible]="false" [strokeWeight]="3" [strokeColor]="'#07b57a'" [visible]="true">
+        <agm-polyline-point [latitude]="+startFinishLat" [longitude]="+startFinishLng">
+        </agm-polyline-point>
+        <agm-polyline-point [latitude]="+firstRecBin.latit" [longitude]="+firstRecBin.longit">
+        </agm-polyline-point>
+      </agm-polyline>
+
+      <!--Desenhar ligação entre ponto de partida e o último ecoponto-->
+      <agm-polyline [visible]="false" [strokeWeight]="3" [strokeOpacity]="0.7" [strokeColor]="'#181a19'"
+                    [visible]="true">
+        <agm-polyline-point [latitude]="+startFinishLat" [longitude]="+startFinishLng">
+        </agm-polyline-point>
+        <agm-polyline-point [latitude]="+lastRecBin.latit" [longitude]="+lastRecBin.longit">
+        </agm-polyline-point>
+      </agm-polyline>
+    </agm-map>
+  </div>
+</div>
+

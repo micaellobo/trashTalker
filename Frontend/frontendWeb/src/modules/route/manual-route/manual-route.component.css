@@ -1,0 +1,142 @@
+.containerA{
+    margin-top: 10px;
+    padding-top: 15px;
+    padding-right: 30px;
+    margin-left:20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.title{
+    display: flex;
+    flex-direction:row;
+}
+
+mat-icon{
+    font-size: 30px;
+}
+
+.title > span {
+    font-size: 25px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+
+.flex-row-between{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.flex-row-between > button{
+    margin-right:30px;
+}
+
+mat-divider{
+    margin-top: 15px;
+}
+
+.form-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.flex-row-space{
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.div-employee{
+    margin-top: 10px;
+}
+
+.div-employee > select{
+    font-size: 17px;
+}
+
+.form-group{
+    width: 350px;
+}
+
+.flex-row{
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.buttons-area{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons-area > button{
+    margin-top:30px ;
+}
+
+.btn-arrow:hover{
+    font-size: 31px;
+}
+
+#exampleFormControlSelect2{
+    height: 230px;
+}
+
+.buttons-bottom{
+    display: flex;
+}
+
+.crud-btn{
+    margin-left: 105px;
+    margin-bottom: 3px;
+}
+
+
+.form-section > div> span{
+    font-size: 20px;
+    margin-left: 10px;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.title-bottom{
+    display: flex;
+}
+
+.info-container-area{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+}
+
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+
+.info-title{
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.btn-arrow{
+    color: green;
+    font-size: 30px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.btn-secondary{
+    margin-right: 20px;
+}
+
+.red {
+    color: red;
+}

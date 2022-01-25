@@ -1,0 +1,125 @@
+<div class="containerA">
+  <app-toolbar class="toolbar"></app-toolbar>
+  <div class="content">
+    <div class="containerA">
+      <div class="title">
+        <div class="titleText">
+          <i class="bi bi-person-fill" style="font-size: 2rem; color:#001e2bd5;"></i>
+          <span>Funcionários</span>
+        </div>
+        <div class="subtitleText">
+          <i class="bi bi-caret-right-fill"></i>
+          <span>Registar Novo Funcionário</span>
+        </div>
+      </div>
+      <div >
+        <mat-stepper orientation="vertical">
+          <mat-step>
+            <ng-template matStepLabel>Dados Pessoais</ng-template>
+            <ng-template matStepContent>
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Primeiro</label>
+                <input type="text" class="form-control" id="inputEmail4" [(ngModel)]="emp.firstName" placeholder="Primeiro Nome">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">Último</label>
+                <input type="text" class="form-control" id="inputPassword4" [(ngModel)]="emp.lastName" placeholder="Último Nome">
+              </div>
+              <div class="flex-row">
+                <div class="form-group col-md-2">
+                  <select class="form-select  form-select-sm" [(ngModel)]="emp.gender" aria-label="Default select example">
+                    <option value="Male" selected>Masculino</option>
+                    <option value="Female">Feminino</option>
+                    <option value="Other">Outro</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="inputEmail4">Email</label>
+                  <input type="email" class="form-control" id="inputEmail4" [(ngModel)]="emp.email" placeholder="example@example.com">
+                </div>
+              </div>
+              <button matStepperNext type="button" class="btn btn-outline-success btn-sm">Próximo</button>
+            </ng-template>
+          </mat-step>
+          <mat-step>
+            <ng-template matStepLabel>Morada</ng-template>
+            <ng-template matStepContent>
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Rua</label>
+                <input type="text" class="form-control" id="inputEmail4" [(ngModel)]="emp.street" placeholder="Rua">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputCity">Cidade</label>
+                <input type="text" class="form-control" id="inputCity" [(ngModel)]="emp.city" placeholder="Cidade">
+              </div>
+              <div class="flex-row">
+                <div class="form-group col-md-2">
+                  <label for="inputCEP">Código-Postal</label>
+                  <input type="text" class="form-control" placeholder="0000-000" [(ngModel)]="emp.zipCode" id="inputCEP">
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="inputPassword4">Pais</label>
+                  <input type="text" class="form-control" id="inputPassword4" [(ngModel)]="emp.country" placeholder="Pais">
+                </div>
+              </div>
+              <button matStepperPrevious type="button" class="btn btn-outline-secondary btn-sm">Voltar</button>
+              <button matStepperNext type="button" class="btn btn-outline-success btn-sm">Próximo</button>
+            </ng-template>
+          </mat-step>
+          <mat-step>
+            <ng-template matStepLabel>Foto de Perfil</ng-template>
+            <ng-template matStepContent>
+
+              <div class="custom-file">
+                <input
+                  type="file"
+                  class="file-input"
+                  name="postpromocional"
+                  (change)="onFileSelected($event)"
+                  #fileUpload/>
+                <label class="custom-file-label" for="customFile"></label>
+              </div>
+
+              <button matStepperPrevious type="button" class="btn btn-outline-secondary btn-sm">Voltar</button>
+              <button matStepperNext type="button" class="btn btn-outline-success btn-sm">Próximo</button>
+            </ng-template>
+          </mat-step>
+          <mat-step>
+            <ng-template matStepLabel>Definições de Utilizador</ng-template>
+            <ng-template matStepContent>
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">Username</label>
+                <input type="text" class="form-control" id="inputPassword4" [(ngModel)]="emp.username" placeholder="Username">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">Password</label>
+                <input type="password" class="form-control" id="inputPassword4" [(ngModel)]="emp.password" placeholder="">
+              </div>
+              <button matStepperPrevious type="button" class="btn btn-outline-secondary btn-sm">Voltar</button>
+              <button matStepperNext type="button" class="btn btn-outline-success btn-sm">Próximo</button>
+            </ng-template>
+          </mat-step>
+
+          <mat-step>
+            <ng-template matStepLabel>Permissões</ng-template>
+            <div class="form-group col-md-2">
+              <select class="form-select  form-select-sm" [(ngModel)]="emp.role" aria-label="Default select example">
+                <option value="manager">Manager</option>
+                <option value="employee">Funcionário</option>
+              </select>
+            </div>
+            <button matStepperPrevious type="button" class="btn btn-outline-secondary btn-sm">Voltar</button>
+            <button matStepperNext type="button" class="btn btn-outline-success btn-sm">Próximo</button>
+          </mat-step>
+          <mat-step>
+            <ng-template matStepLabel>Registar Funcionário</ng-template>
+            <p>Finalizar o registo do funcionário? </p>
+            <button matStepperPrevious type="button" class="btn btn-outline-secondary btn-sm" (click)="cancelOperation()">Cancelar</button>
+            <button type="button" class="btn btn-outline-success btn-sm" (click)="addEmployee()">Registar</button>
+          </mat-step>
+        </mat-stepper>
+      </div>
+
+
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="flex-row">
+    <span mat-dialog-title>Planear Rota </span>
+    <mat-icon>help</mat-icon>
+    </div>
+    <div class="flex-col" mat-dialog-content>
+        <div>
+            <mat-label>Deseja planear uma rota de forma manual ou automática ?
+            </mat-label>
+        </div>
+    </div>
+    <div class="flex-row-center">
+        <button type="button" class="btn btn-secondary btn-sm" (click)="openManual()">Manual</button>
+        <button type="button" class="btn btn-success btn-sm" (click)="openAutomatic()">Automática</button>
+    </div>

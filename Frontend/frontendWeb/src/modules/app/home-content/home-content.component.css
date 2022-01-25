@@ -1,0 +1,164 @@
+.grid-2-column {
+    display: grid;
+    grid-template-columns: auto 280px;
+}
+
+.rotas {
+    margin-bottom: 20px;
+}
+
+agm-map {
+    height: 700px;
+    width: auto;
+}
+
+.flex-column>span {
+    margin-left: 30px;
+    color: rgb(134, 134, 134);
+    font-weight: 300;
+}
+
+.mapa {
+    margin-left: 30px;
+}
+
+i {
+    font-size: 24px;
+    color: rgb(37, 65, 39);
+    margin-left: 10px;
+}
+
+span {
+    font-size: 22px;
+    margin-left: 5px;
+    line-height: 32px;
+    font: "Roboto", "Helvetica Neue Light", "Helvetica Neue";
+}
+
+mat-tab-group {
+    height: 300px;
+    width: auto;
+    margin-left: 30px;
+}
+
+.flex-column>mat-divider {
+    margin-left: 30px;
+    width: auto;
+    padding-bottom: 20px;
+}
+
+.right-section {
+    padding-left: 15px;
+    padding-top: 15px;
+    min-width: 100px;
+    border-left: 1px solid rgb(192, 190, 190);
+    background-color: #e7e9eb;
+    box-shadow: 2px 2px 1px 1px #a5aca9;
+    -webkit-box-shadow: 1px 1px 7px 1px #84978c;
+    height: 100%;
+}
+
+.right-section>div>span {
+    font: 22px "Open Sans";
+    color: rgb(30, 49, 31);
+}
+
+.alerts-area {
+    margin-top: 20px;
+}
+
+.border {
+    border: black 5px;
+}
+
+nav ul {
+    padding-left: 0%;
+    overflow: hidden;
+    overflow-y: scroll;
+    height: 650px;
+    width: 99%;
+}
+
+.alertVolumeText {
+    font-weight: bold;
+}
+
+.red {
+    color: red;
+}
+
+.yellow {
+    color: rgb(218, 170, 14);
+}
+
+.flex-column {
+    margin-top: 35px;
+    margin-right: 25px;
+    height: 100vh;
+}
+
+mat-card {
+    margin-top: 10px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    min-width: 50px;
+    max-width: 350px;
+}
+
+mat-card:hover {
+    cursor: pointer;
+    border: 1px solid rgb(209, 204, 204);
+}
+
+mat-card>span {
+    font-size: 13px;
+    font: "Roboto", "Helvetica Neue Light", "Helvetica Neue";
+}
+
+.flex-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-row>button {
+    margin-right: 10px;
+}
+
+.btn {
+    font-size: 12px;
+    float: right;
+    margin-top: 2px;
+    margin-bottom: 4px;
+}
+
+.container>input {
+    width: 300px;
+}
+
+tbody>tr>td {
+    cursor: pointer;
+}
+
+.a {
+    font-style: italic;
+    font-size: 17px;
+}
+
+@media (max-width: 1150px) {
+    .right-section {
+        display: none;
+    }
+    .grid-2-column {
+        display: grid;
+        grid-template-columns: auto;
+    }
+}
+
+.small {
+    font-size: 13px;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+}

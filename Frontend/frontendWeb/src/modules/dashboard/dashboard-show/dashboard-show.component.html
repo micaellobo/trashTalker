@@ -1,0 +1,132 @@
+<div class="containerA">
+  <div class="title">
+    <div class="titleText">
+      <i class="bi bi-bar-chart-fill" style="font-size: 2rem; color:#001e2bd5;"></i>
+      <span>Dashboards</span>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-10 border bg-light rounded m-4">
+       <form class="row gx-3 gy-2 py-5">
+
+          <div class="col-sm-4">
+           <div>
+             <label for="inputEmail4">Data Inicio</label>
+           </div>
+            <label class="visually-hidden" for="specificSizeSelect">Preference</label>
+             <input type="date" name="dtn" class="form-control" id="inputEmail4"  [(ngModel)]="dateBegin">
+          </div>
+          <div class="col-sm-4">
+           <div>
+             <label for="inputEmail4">Data Fim</label>
+           </div>
+            <label class="visually-hidden" for="specificSizeSelect">Preference</label>
+            <input type="date" name="dtn" class="form-control" id="inputEmail4" [(ngModel)]="dateEnd">
+          </div>
+          <div class="col-sm-4">
+           <div>
+             <label for="inputEmail4"></label>
+           </div>
+           <button type="button" class="btn btn-success" (click)="withdate()"
+           *ngIf="isdate" >Pesquisar</button>
+         </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-3 border bg-light rounded m-4" >
+        <p class="text-center"><i class="bi bi-trash-fill" style="font-size: 2rem; color:#001e2bd5;"></i></p>
+        <p class="text-center">Numero de Contentores no limite da capacidade</p>
+        <p class="text-center">{{numeroEcopontosLimite}}</p>
+      </div>
+      <div class="col-3 border bg-light rounded m-4">
+        <p class="text-center"><i class="bi bi-trash"style="font-size: 2rem; color:#001e2bd5;"></i></p>
+        <p class="text-center">Volume de residuos Recolhidos</p>
+        <p class="text-center">{{volumeResiduosRecolhidos}}m&#179;</p>
+      </div>
+      <div class="col-3 border bg-light rounded m-4">
+        <p class="text-center"><i class="bi bi-truck" style="font-size: 2rem; color:#001e2bd5;"></i> </p>
+        <p class="text-center">Total rotas</p>
+        <p class="text-center">{{totalRotas}}</p>
+      </div>
+    </div>
+
+    <div class="row col-10 border bg-light rounded m-4" >
+     <div class="col-2 bg-light rounded m-4">
+       <p class="text-center">Total Tipo Rota </p>
+       <p class="text-center"><i class="bi bi-info-square" style="font-size: 2rem; color:#001e2bd5;"></i></p>
+     </div>
+     <div class="col-1 m-4">
+       <p class="text-center">Planeadas</p>
+       <p class="text-center">{{totalPlaneadas}}</p>
+     </div>
+     <div class="col-2 m-4">
+       <p class="text-center">A Decorrer</p>
+       <p class="text-center">{{totalDecorrer}}</p>
+     </div>
+     <div class="col-1 m-4">
+       <p class="text-center">Finalizadas</p>
+       <p class="text-center">{{totalTerminadas}}</p>
+     </div>
+     <div class="col-2 m-4">
+       <p class="text-center">Canceladas</p>
+       <p class="text-center">{{totalCanceladas}}</p>
+     </div>
+   </div>    
+
+    <div class="row col-10 border bg-light rounded m-4" >
+      <div class="col-2 bg-light rounded m-4">
+        <p class="text-center">Volume Recolhido </p>
+        <p class="text-center"><i class="bi bi-recycle" style="font-size: 2rem; color:#001e2bd5;"></i></p>
+      </div>
+      <div class="col-1 m-4">
+        <p class="text-center">Papel</p>
+        <p class="text-center">{{totalPaperVolume}}m&#179;</p>
+      </div>
+      <div class="col-2 m-4">
+        <p class="text-center">Vidro</p>
+        <p class="text-center">{{totalGlassVolume}}m&#179;</p>
+      </div>
+      <div class="col-1 m-4">
+        <p class="text-center">Plastico/Metal</p>
+        <p class="text-center">{{totalPlasticVolume}}m&#179;</p>
+      </div>
+      <div class="col-2 m-4">
+        <p class="text-center">Indiferenciados</p>
+        <p class="text-center">{{totalUndifferentiatedVolume}}m&#179;</p>
+      </div>
+    </div>    
+</div>
+
+  <div class="title">
+    <div class="titleText">
+      <i class="bi bi-activity" style="font-size: 2rem; color:#001e2bd5;"></i>
+      <span>Analise Global</span>
+    </div>
+  </div>
+
+<div class="container ">
+  <div class="row">
+    <div class="col-5 border m-3">
+     <app-chart1></app-chart1>
+    </div>
+    <div class="col-5 border m-3">
+     <app-chart2></app-chart2>
+    </div>
+    <div class="col-5 border m-3">
+     <app-chart3></app-chart3>
+    </div>
+    <div class="col-5 border m-3">
+     <app-chart4></app-chart4>
+    </div>
+    <div class="col-10 border m-4">
+      <app-chart5></app-chart5>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="pt.ipp.estg.trashtalkerapp.ui.home.HomeFragment"
+        android:label=""
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/routeFragment"
+        android:name="pt.ipp.estg.trashtalkerapp.ui.route.RouteFragment"
+        android:label="Minhas Rotas"
+        tools:layout="@layout/fragment_route" />
+    <fragment
+        android:id="@+id/problemsFragment"
+        android:name="pt.ipp.estg.trashtalkerapp.ui.problems.ProblemsFragment"
+        android:label="Problemas"
+        tools:layout="@layout/fragment_problems" />
+    <fragment
+        android:id="@+id/myAccountFragment"
+        android:name="pt.ipp.estg.trashtalkerapp.ui.myAccount.MyAccount"
+        android:label="Minha Conta"
+        tools:layout="@layout/fragment_my_account" />
+    <activity
+        android:id="@+id/appActivity2"
+        android:name="pt.ipp.estg.trashtalkerapp.AppActivity"
+        android:label="app_bar_app"
+        tools:layout="@layout/app_bar_app" />
+</navigation>

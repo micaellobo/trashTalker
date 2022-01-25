@@ -1,0 +1,44 @@
+<div class="flex-row">
+    <span mat-dialog-title>Alterar Dados de {{emp.firstName}}
+        {{emp.lastName}} </span>
+    <mat-icon>help</mat-icon>
+    </div>
+    <div mat-dialog-content>
+        <form>
+              <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputEmail4">Email</label>
+                    <input type="text" name="email" class="form-control" id="inputEmail4" [(ngModel)]="emp.email">
+                  </div>
+                  <div class="form-group col-md-5">
+                    <label for="inputPassword4">Pais</label>
+                    <input type="text" name="pais"class="form-control" id="inputPassword4" [(ngModel)]="emp.country">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputEmail4">Rua</label>
+                    <input type="text" name="rua" class="form-control" id="inputEmail4" [(ngModel)]="emp.street">
+                  </div>
+                  <div class="form-group col-md-5">
+                    <label for="inputCity">Cidade</label>
+                    <input type="text" name="cidade" class="form-control" id="inputCity" [(ngModel)]="emp.city">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-2">
+                    <label for="inputCEP">Código-Postal</label>
+                    <input type="text" name="codigoPostal" class="form-control" [(ngModel)]="emp.zipCode" id="inputCEP" >
+                  </div>
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="customFile">
+                    <label class="custom-file-label" for="customFile"></label>
+                  </div>
+                </div>
+                <div class="flex-row-center" mat-dialog-actions>
+                    <button type="button" class="btn btn-secondary btn-sm" (click)="cancel()">Cancelar</button>
+                    <button type="submit" class="btn btn-success btn-sm" (click)="confirm()" [mat-dialog-close]="emp">Guardar Alterações</button>
+                </div>
+              </form>
+    </div>
+ 

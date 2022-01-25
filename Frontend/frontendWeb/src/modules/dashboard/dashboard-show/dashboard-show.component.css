@@ -1,0 +1,119 @@
+.containerA{
+    padding-top: 15px;
+    padding-right: 30px;
+    margin-left:20px;
+    display: flex;
+    flex-direction: column;
+}
+
+h2{
+    font-family:Akzidenz Grotesk BQ Light,Helvetica;
+}
+
+.title{
+    display: flex;
+    flex-direction:row;
+    justify-content:space-between;
+}
+
+.inputText{
+    font-size: 18px;
+    size: 35px;
+    margin-right: 5px;
+}
+
+.bi{
+    font-size: 17px;
+    cursor: pointer;
+}
+
+
+.titleText > span {
+    font-size: 25px;
+    margin-left: 5px;
+}
+
+.DivToScroll{
+    margin-top: 40px;
+    left: -1px;
+    padding: 10px 7px 5px;
+    height:200px;
+    overflow:scroll;
+    overflow-x:hidden;
+    margin-bottom: 10px;
+}
+
+form{
+    padding-left: 10px;
+    padding-right: 20px;
+}
+
+.form-row{
+    display: flex;
+}
+
+.form-group{
+    padding: 7px;
+}
+
+tbody > tr > td{
+    cursor: pointer;
+} 
+
+.formDetails{
+    border-left:3px rgb(202, 200, 200) solid ;
+    border-bottom:2px rgb(202, 200, 200) solid ;
+    border-top:1px rgb(202, 200, 200) solid ;
+    padding:20px;
+}
+
+.info-section{
+    display: grid;
+    grid-template-columns: 75% 25%;
+    margin-bottom: 10px;
+}
+
+.info-section > div{
+    border:1px rgb(202, 200, 200) solid ;
+    border-bottom:2px rgb(202, 200, 200) solid ;
+}
+
+input{
+    font-size: 13px;
+}
+
+.menu-options{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-left: 10px;
+}
+
+.bottom-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.bottom-section > span{
+    margin-left: 10px;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 32px;
+    font:"Roboto","Helvetica Neue Light","Helvetica Neue";
+    color: rgb(134, 134, 134);
+}
+
+.fs-6 {
+    cursor: pointer;
+    font-weight: 500;
+    color: #21313c;
+    padding-right: 33px;
+    height: 14px;
+}
+
+svg{
+    padding-bottom: 2px;
+    padding-right: 3px;
+}

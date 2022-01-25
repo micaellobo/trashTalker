@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="15dp">
+            <TextView
+                android:id="@+id/txtNameFinished"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:text="Rota 1"
+                android:textColor="@color/black"
+                android:layout_weight="2"
+                android:textSize="16sp"/>
+        <TextView
+            android:id="@+id/txtDateBeginFinished"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:text="Rota 1"
+            android:textSize="12sp"/>
+        <TextView
+            android:id="@+id/txtTimeBeginFinished"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Rota 1"
+            android:textSize="12sp"/>
+            <ImageView
+                android:layout_weight="1"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_baseline_done" />
+        </LinearLayout>
+
+
+
+

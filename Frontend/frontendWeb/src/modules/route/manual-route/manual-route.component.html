@@ -1,0 +1,106 @@
+<div class="containerA">
+    <div class="flex-row-between">
+      <div class="title">
+        <mat-icon>pin_drop</mat-icon>
+        <span>Planear Rota</span>
+      </div>
+      <div>
+          <button type="button" class="btn btn-success" (click)="submitRoute()">Registar Rota
+          </button>
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="form-section">
+        <div class="flex-row-space">
+          <div>
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Nome</label>
+              <input type="text" class="form-control" id="inputEmail4" [(ngModel)]="newRoute.name" placeholder="Rota">
+            </div>
+            <div class="div-employee">
+              <label>Funcionário</label>
+              <select class="form-select  form-select-sm div-width" [(ngModel)]="newRoute.employeeId" aria-label="Default select example">
+                <option *ngFor="let emp of allEmployees" value="{{emp.id}}">{{emp.firstName}} {{emp.lastName}}</option>
+              </select> 
+          </div>
+          </div> 
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Data Inicio</label>
+            <input type="date" class="form-control" id="inputEmail4" [(ngModel)]="newRoute.dateBegin" placeholder="Rota">
+          </div>
+        </div>
+
+        <div class="flex-row">
+          <div class="form-group">
+            <label for="exampleFormControlSelect2">Ecopontos Disponiveis</label>
+            <select multiple class="form-control" id="exampleFormControlSelect2">
+              <option *ngFor="let rec of recBinsList" (click)="selectRecBinfromAvailable(rec)">{{rec.street}} {{rec.zipCode}}</option>
+            </select>
+          </div>
+            <div class="buttons-area">
+              <i class="bi bi-arrow-up-circle btn-arrow" (click)= "moveUp()"></i>
+              <i class="bi bi-arrow-down-circle btn-arrow" (click)= "moveDown()"></i>
+              <button type="button" class="btn btn-success btn-sm" (click)= "removeFromRoute()">Remover</button>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlSelect2">Ecopontos da Rota</label>
+              <select multiple class="form-control" id="exampleFormControlSelect2">
+                <option *ngFor="let rec of recBinsRoute;let i=index" (click)="selectRecBinfromRoute(rec,i)">{{rec.street}} {{rec.zipCode}}</option>
+              </select>
+            </div>
+        </div>
+        <div class="title-bottom">
+          <mat-icon>info</mat-icon><span>Detalhes Ecoponto</span>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="info-container-area">
+            <div class="flex-column">
+              <span class="info-title">Ref.</span>
+              <span>{{currentRecBin.id}}</span>
+            </div>
+            <div class="flex-column">
+              <span class="info-title">Morada</span>
+              <span>{{currentRecBin.street}} {{currentRecBin.zipCode}}</span>
+            </div>
+            <div class="flex-column">
+              <span class="info-title">Lat.</span>
+              <span>{{currentRecBin.latit}}</span>
+            </div>
+            <div class="flex-column">
+              <span class="info-title">Long.</span>
+              <span>{{currentRecBin.longit}}</span>
+            </div>
+        </div>
+        <div class="title-bottom">
+          <mat-icon>info</mat-icon><span>Previsão de Ocupação Total</span>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="info-container-area">
+          <div class="flex-column">
+            <span class="info-title">Papel</span>
+            <span *ngIf="prevision[0] == 'O contentor já se encontra cheio à: ' " class="red">{{prevision[0]}}</span>
+            <span *ngIf="prevision[0] != 'O contentor já se encontra cheio à: ' ">{{prevision[0]}}</span>
+            <span>{{previsionDays[0]}}</span>
+          </div>
+          <div class="flex-column">
+            <span class="info-title">Vidro</span>
+            <span *ngIf="prevision[1] == 'O contentor já se encontra cheio à: ' " class="red">{{prevision[1]}}</span>
+            <span *ngIf="prevision[1] != 'O contentor já se encontra cheio à: ' ">{{prevision[1]}}</span>
+            <span>{{previsionDays[1]}}</span>
+          </div>
+          <div class="flex-column">
+            <span class="info-title">Plástico</span>
+            <span *ngIf="prevision[2] == 'O contentor já se encontra cheio à: ' " class="red">{{prevision[2]}}</span>
+            <span *ngIf="prevision[2] != 'O contentor já se encontra cheio à: ' ">{{prevision[2]}}</span>
+            <span>{{previsionDays[2]}}</span>
+          </div>
+          <div class="flex-column">
+            <span class="info-title">Indiferenciado</span>
+            <span *ngIf="prevision[3] == 'O contentor já se encontra cheio à: ' " class="red">{{prevision[3]}}</span>
+            <span *ngIf="prevision[3] != 'O contentor já se encontra cheio à: ' ">{{prevision[3]}}</span>
+            <span>{{previsionDays[3]}}</span>
+          </div>
+      </div>
+    </div>
+</div>
+  

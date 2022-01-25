@@ -1,0 +1,53 @@
+.flex-row{
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-row-alert{
+  display: flex;
+}
+
+.flex-row-alert > mat-icon{
+  margin-bottom: 20px;
+  padding-right: 10px;
+  color: red;
+}
+
+.flex-row-alert > h3{
+  color: red;
+}
+
+.layout{
+  display: flex;
+  flex-direction: column;
+  }
+
+.alerta{
+  margin-left: 15px;
+}
+
+.alerta > span{
+  margin-left: 35px;
+  color: red;
+}
+.alerta > p{
+  margin-left: 35px;
+  color: red;
+}
+
+.flex-row > mat-icon{
+  padding-top: 5px;
+  padding-right: 10px;
+}
+
+.flex-row-center{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+button {
+  margin-right: 5px;
+  height: 35px;
+}

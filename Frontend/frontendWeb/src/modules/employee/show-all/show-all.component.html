@@ -1,0 +1,233 @@
+<div class="containerA">
+  <div class="title">
+    <div class="titleText">
+      <i
+        class="bi bi-person-fill"
+        style="font-size: 2rem; color: #001e2bd5"
+      ></i>
+      <span>Funcionários</span>
+    </div>
+
+    <form class="example-form">
+      <input
+        type="text"
+        placeholder="Funcionário..."
+        aria-label="Number"
+        matInput
+        class="inputText"
+        [formControl]="myControl"
+        [matAutocomplete]="auto"
+      />
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let option of employees" [value]="option.firstName">
+          {{ option.firstName }} {{ option.lastName }}
+        </mat-option>
+      </mat-autocomplete>
+      <i class="bi bi-search"></i>
+    </form>
+  </div>
+
+  <div class="DivToScroll">
+    <table class="table table-hover">
+      <thead class="top-table">
+        <tr>
+          <th scope="col">Primeiro</th>
+          <th scope="col">Último</th>
+          <th scope="col">Função</th>
+          <th scope="col">Cidade</th>
+          <th scope="col">Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let e of employees" (click)="selectFunc(e)">
+          <td>{{ e.firstName }}</td>
+          <td>{{ e.lastName }}</td>
+          <td>{{ e.role }}</td>
+          <td>{{ e.city }}</td>
+          <td>{{ e.status }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="bottom-section">
+    <span>Informações</span>
+    <div class="menu-options">
+      <div class="fs-6 mb-1" (click)="addEmployee()">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="#21313c"
+          class="bi bi-plus-square"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+          />
+          <path
+            d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+          />
+        </svg>
+        Novo
+      </div>
+      <div class="fs-6 mb-1" (click)="updateEmployee()">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="#21313c"
+          class="bi bi-plus-square"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"
+          />
+        </svg>
+        Atualizar
+      </div>
+      <div class="fs-6 mb-1" (click)="disableEmployee()">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="#21313c"
+          class="bi bi-plus-square"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+          />
+          <path
+            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+          />
+        </svg>
+        Desativar
+      </div>
+    </div>
+  </div>
+
+  <div class="info-section">
+    <form class="formDetails">
+      <div class="form-row">
+        <div class="form-group col-md-5">
+          <label for="inputEmail4">Primeiro</label>
+          <input
+            type="email"
+            class="form-control"
+            id="inputEmail4"
+            placeholder="{{ selectedEmployee.firstName }}"
+            text="sa"
+            readonly
+          />
+        </div>
+        <div class="form-group col-md-5">
+          <label for="inputPassword4">Último</label>
+          <input
+            type="password"
+            class="form-control"
+            id="inputPassword4"
+            placeholder="{{ selectedEmployee.lastName }}"
+            readonly
+          />
+        </div>
+        <div class="form-group col-md-2">
+          <label for="inputPassword4">Função</label>
+          <input
+            type="password"
+            class="form-control"
+            id="inputPassword4"
+            placeholder="{{ selectedEmployee.role }}"
+            readonly
+          />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="inputEmail4"
+            placeholder="{{ selectedEmployee.email }}"
+            text="sa"
+            readonly
+          />
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Pais</label>
+          <input
+            type="password"
+            class="form-control"
+            id="inputPassword4"
+            placeholder="{{ selectedEmployee.country }}"
+            readonly
+          />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Rua</label>
+          <input
+            type="email"
+            class="form-control"
+            id="inputEmail4"
+            placeholder="{{ selectedEmployee.street }}"
+            text="sa"
+            readonly
+          />
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Username</label>
+          <input
+            type="password"
+            class="form-control"
+            id="inputPassword4"
+            placeholder="{{ selectedEmployee.username }}"
+            readonly
+          />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputCity">Cidade</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputCity"
+            placeholder="{{ selectedEmployee.city }}"
+            readonly
+          />
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputCity">Género</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputCity"
+            placeholder="{{ selectedEmployee.gender }}"
+            readonly
+          />
+        </div>
+        <div class="form-group col-md-2">
+          <label for="inputCEP">Código-Postal</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="{{ selectedEmployee.zipCode }}"
+            id="inputCEP"
+            readonly
+          />
+        </div>
+      </div>
+    </form>
+    <div>
+      <div class="fs-2 mb-3">
+        <img
+          src="https://localhost:5001/api/v1/images/{{ selectedEmployee._id }}"
+          alt="image"
+          width="100%"
+        />
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="flex-row">
+    <span mat-dialog-title>Concluir alerta </span>
+    <mat-icon>help</mat-icon>
+    </div>
+    <div class="flex-col" mat-dialog-content>
+        <div>
+            <mat-label>Confirma que o problema se encontra resolvido?
+            </mat-label>
+        </div>
+    </div>
+    <div class="flex-row-center">
+        <button type="button" class="btn btn-secondary btn-sm" (click)="cancel()">Cancelar</button>
+        <button type="button" class="btn btn-success btn-sm" (click)="confirm()">Confirmar</button>
+    </div>
+

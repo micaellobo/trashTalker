@@ -1,0 +1,26 @@
+<div class="containerA">
+    <div class="flex-row-between">
+      <div class="title">
+        <mat-icon>pin_drop</mat-icon>
+        <span>Gerar Rota Automática</span>
+      </div>
+      <div>
+        <button type="button" class="btn btn-secondary" (click)= "goToManualSection()">Ir para Rota Manual</button>
+        <button type="button" class="btn btn-success" (click)= "submitRoute()">Gerar Rota</button>
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="flex-column">
+      <div>
+          <label>Funcionário</label>
+          <select class="form-select  form-select-sm div-width" [(ngModel)]="route.employeeId" aria-label="Default select example">
+            <option *ngFor="let emp of allEmployees" value="{{emp.id}}">{{emp.firstName}} {{emp.lastName}}</option>
+          </select> 
+      </div>
+      <div>
+          <label for="inputEmail4">Data Inicio</label>
+          <input type="date" class="form-control div-width" id="inputEmail4" [(ngModel)]="route.dateBegin" placeholder="Rota">
+      </div>
+    </div>
+</div>
+  

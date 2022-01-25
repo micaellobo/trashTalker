@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.problems.ProblemsFragment"
+    android:padding="15dp"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/txtDateTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:text="Reportar Problema"
+        android:textStyle="bold"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:background="@android:color/darker_gray"/>
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/radioGroup_typeIssue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp">
+        <RadioButton android:id="@+id/radio_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contentor"/>
+        <RadioButton android:id="@+id/radio_sensor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sensor"/>
+        <RadioButton android:id="@+id/radio_system"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sistema Informático"/>
+        <RadioButton android:id="@+id/radio_other"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Outro"/>
+    </RadioGroup>
+    <TextView
+        android:id="@+id/txtDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Descrição:"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"/>
+        <EditText
+            android:id="@+id/editIssue"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:minLines="3"
+            android:maxLines="8"
+            android:gravity="top"
+            android:inputType="textCapSentences|textNoSuggestions|textMultiLine">
+        </EditText>
+    <Button
+        android:id="@+id/btnCloseRoute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/ic_baseline_check_circle_outline_24"
+        android:text="Submeter"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"/>
+
+
+</LinearLayout>

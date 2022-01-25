@@ -1,0 +1,35 @@
+image: mcr.microsoft.com/dotnet/sdk:5.0
+
+variables:
+ GIT_DEPTH: 10
+ GIT_SSL_NO_VERIFY: "true"
+
+stages:
+ - build
+ - test
+ 
+job_build:
+ stage: build
+ tags:
+  - runner
+ script:
+  - dotnet build "Backend/TrashTalker/TrashTalker.csproj"
+ 
+job_test:
+ stage: test
+ tags:
+  - runner
+ script:
+  - dotnet test "Backend/TrashTalker/TrashTalker.csproj"
+  
+#job_deploy:
+# stage: deploy
+# tags:
+#  - docker-runner 
+# only:
+#  - master
+#  artifacts:
+#   paths:
+#    - publish/
+#  script:
+#   - dotnet publish -c Release -o ./publish TasksOnlineWebAPI/TasksOnlineWebAPI.csproj

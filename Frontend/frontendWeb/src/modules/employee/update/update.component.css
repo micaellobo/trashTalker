@@ -1,0 +1,36 @@
+
+  mat-icon{
+      padding-top: 5px;
+      padding-left: 5px;
+  }
+  
+  .form-row{
+      display: flex;
+      flex-direction: row;
+  }
+  .flex-row{
+      display: flex;
+      flex-direction: row;
+  }
+
+  .form-row > .form-group{
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+
+  button {
+    margin-right: 5px;
+    height: 35px;
+  }
+  
+  .flex-row-center{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .custom-file{
+    margin-top: 40px;
+    margin-left: 20px;
+  }

@@ -1,0 +1,46 @@
+.containerA{
+    display: flex;
+    flex-direction:column;
+    justify-self: flex-start;
+    border-right: 1px rgb(226, 230, 226) solid;
+    min-height: 100vh; 
+    padding-left: 15px;
+    padding-top: 15px;
+}
+
+.itemList{
+    cursor: pointer;
+}
+
+mat-icon{
+    padding-bottom: 25px;
+    cursor: pointer;
+    color:#21313c;
+}
+
+.itemA{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 10px;
+    height: 50px;
+}
+
+.itemA:hover{
+    cursor: pointer;
+    background-color: rgba(207, 211, 207, 0.459);
+    border-right: 2px rgba(20, 88, 20, 0.74) solid;
+}
+
+.textA{
+    padding-left: 8px;
+    color:#001E2B;
+    font-weight: 400;
+}
+
+a{
+    text-decoration: none;
+    font-size: 15px;
+}
+
+

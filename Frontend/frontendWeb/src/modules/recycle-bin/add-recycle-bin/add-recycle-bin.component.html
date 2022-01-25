@@ -1,0 +1,57 @@
+<div class="containerA">
+    <div class="title">
+      <div class="titleText">
+        <i style="font-size: 2rem; color:#00b3ffd5;"></i>
+        <span>Ecopontos</span>
+      </div>
+      <div class="subtitleText">
+        <i class="bi bi-caret-right-fill"></i>
+        <span>    Registar Novo Ecoponto</span>
+      </div>
+    </div>
+  <div >
+  <mat-stepper orientation="vertical"> 
+
+  <mat-step>
+    
+    <ng-template matStepLabel>Morada</ng-template>
+    <ng-template matStepContent>
+      
+      <div class="container">
+
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Rua</label>
+          <input type="text" class="form-control" id="inputEmail4" [(ngModel)]="rb.street" placeholder="Rua">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputCity">Cidade</label>
+          <input type="text" class="form-control" id="inputCity" [(ngModel)]="rb.city" placeholder="Cidade">
+        </div>
+        <div class="flex-row">
+        <div class="form-group col-md-2">
+          <label for="inputCEP">Código-Postal</label>
+          <input type="text" class="form-control" placeholder="0000-000" [(ngModel)]="rb.zipCode" id="inputCEP">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputPassword4">Pais</label>
+          <input type="text" class="form-control" id="inputPassword4" [(ngModel)]="rb.country" placeholder="Pais">
+        </div>
+        </div>
+        
+      </div>
+
+      <button matStepperPrevious type="button" class="btn btn-outline-secondary btn-sm">Voltar</button>
+      <button matStepperNext type="button" class="btn btn-outline-success btn-sm">Próximo</button>
+    </ng-template>
+  </mat-step>
+  
+  <mat-step>
+    <ng-template matStepLabel>Registar Ecoponto</ng-template>
+    <p>Finalizar o registo do ecoponto? </p>
+    <button matStepperPrevious type="button" class="btn btn-outline-secondary btn-sm" (click)="cancelOperation()">Cancelar</button>
+    <button type="button" class="btn btn-outline-success btn-sm" (click)="addRecycleBin()">Registar</button>
+  </mat-step>
+</mat-stepper>
+  </div>
+
+  

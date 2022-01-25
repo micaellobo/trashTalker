@@ -1,0 +1,63 @@
+<div class="grid-2-column">
+
+  <div class="flex-column">
+    <span>Ecopontos</span>
+    <mat-divider></mat-divider>
+    <div class="mapa">
+      <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+        <agm-marker *ngFor="let bins of listRecBin;let i=index" [latitude]="bins.latit" [longitude]="bins.longit" [iconUrl]="{
+          url: './././assets/images/bins.png',
+          scaledSize: {
+            height: 30, 
+            width: 30,  
+            equals: marker
+          }}" (markerClick)="openInfo(bins.id)" (mouseOver)="onMouseOver(i)">
+          <agm-info-window [latitude]="bins.latit" [longitude]="bins.longit" [isOpen]="bins.display">
+            ID: {{bins.id}} <br> Rua: {{bins.street}} <br> Cod-Postal: {{bins.zipCode}}<br> Cidade: {{bins.city}}
+          </agm-info-window>
+        </agm-marker>
+      </agm-map>
+    </div>
+  </div>
+
+  <div class="right-section">
+    <div>
+      <div class="flex-column2">
+        <div>
+          <i class="bi bi-exclamation-triangle"></i>
+          <span class="a">Contentores em Alerta</span>
+        </div>
+        <!-- <button type="button" class="btn btn-success btn-sm" (click)="selectAlertsSection()">Ver Alertas gerais</button> -->
+      </div>
+      <div class="alerts-area">
+        <nav>
+          <ul class="border">
+            <mat-card class="example-card" *ngFor="let cont of containersListAlert" (click)="openInfo(cont.recyclerBin.id)">
+              <span class=" alertVolumeText ">Volume ocupado: </span>
+              <span *ngIf="cont.percentageOccupied >= 95" class="red">{{cont.percentageOccupied}}%</span>
+              <span *ngIf="cont.percentageOccupied >= 80 && cont.percentageOccupied < 95" class="yellow">{{cont.percentageOccupied}}%</span>
+              <span *ngIf="cont.percentageOccupied < 80">{{cont.percentageOccupied}}%</span>
+              <mat-divider inset></mat-divider>
+              <!-- <button type="button" class="btn btn-light btn-sm">Marcar como vista</button> -->
+              <p>{{cont.recyclerBin.zipCode}} - {{cont.typeOfWaste}}</p>
+              <p class="small" *ngIf="calculatePrevisionDate(cont) != 'O contentor já se encontra cheio à: '">
+                Data de Previsão:
+              </p>
+              <p class="small red" *ngIf="calculatePrevisionDate(cont) == 'O contentor já se encontra cheio à: '">
+                {{calculatePrevisionDate(cont)}} {{changeDateFormat(cont.previsionOrDaysFull)}}
+              </p>
+              <p class="small" *ngIf="calculatePrevisionDate(cont) != 'O contentor já se encontra cheio à: '">
+                {{calculatePrevisionDate(cont)}} {{changeDateFormat(cont.previsionOrDaysFull)}}
+              </p>
+              <br>
+              
+              <mat-card-footer>
+                <mat-progress-bar mode="determinate" value={{cont.percentageOccupied}}></mat-progress-bar>
+              </mat-card-footer>
+            </mat-card>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
