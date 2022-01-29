@@ -1,4 +1,4 @@
-# Trabalho Prático de Laboratorio de desenvolvimento de Software
+
 
 
 :articulated_lorry: Sistema de monitorização de pontos de recolha de residuos :articulated_lorry:
