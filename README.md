@@ -59,8 +59,3 @@ Para iniciar o projeto devem ser seguidos os seguintes passos:
 <img src="https://github.com/micaellobo/trashTalker/raw/master/Documentacao/Diagramas/ProjectArchitecture.png" alt="ProjectArchitecture" width="900"/>
 
 
-### **Escola Superior de Tecnologia e Gestão - P.Porto**
-
-
-
-
