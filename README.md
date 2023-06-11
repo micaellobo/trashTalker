@@ -1,51 +1,37 @@
 
 
 
-:articulated_lorry: Sistema de monitorização de pontos de recolha de residuos :articulated_lorry:
+:articulated_lorry: Monitoring system for waste collection points :articulated_lorry:
 
 <img title="Logotipo" alt="Logo" src="Documentacao/Imagens/Logo1.png" width="450">
 
-## **Descrição**
+## **Description**
 
 
-Este projeto tem como objetivo desenvolver uma aplicação que seja capaz de gerir e monitorizar contentores de uma empresa de residuos, para isso serão utilizados sensores que façam o controlo de fluxo dentro do contentor, registando em tempo real o estado do contentor(vazio, intermedio e cheio), facilitando assim a forma como as rotas serão realizadas. Por exemplo: apenas faz sentido fazer parte da rota contentores que estejam cheios.
+This project aims to develop an application that is able to manage and monitor garbage container a waste company, for this purpose sensors with `arduino` will be used to control the flow inside the waste bin, recording in real time the percentage of occupancy. An `Android` mobile application for the worker to register the collection of a garbage container. Thus facilitating decision-making in the management of the company.
 
 
-Toda a documentação está
-disponivel [aqui](https://github.com/micaellobo/trashTalker/tree/master/Documentacao)
+## Docs
 
-## **Como Iniciar o Projeto?**
+[Software Requirement Specification](https://github.com/micaellobo/trashTalker/blob/master/Documentacao/SRS.pdf)
 
-Para iniciar o projeto devem ser seguidos os seguintes passos:  
-1. Verificar que a connection string utilizada no projeto (Backend/TrashTalker/appSettings.Development.json) é:  
-    `"DBConnection": "Server=localhost;Database=trashTalker;User=sa;Password=MyPass@word"`
-2. Criar um docker container com a imagem de SQL que esteja em conformidade com a connection string:  
-    `docker run -e "ACCEPT_EULA=1" -e "MSSQL_SA_PASSWORD=MyPass@word" -e "MSSQL_USER=sa" -p 1433:1433 -d --name=sql mcr.microsoft.com/mssql/server:2019-latest`
-3. Iniciar o container: `docker start sql`
-4. Iniciar o backend: `dotnet build` e `dotnet run`
-5. Instalar dependências e iniciar o frontend: `npm install` e deseguida `npm start`
-  
+[Software Configuration Management Plan](https://github.com/micaellobo/trashTalker/blob/master/Documentacao/SCM_PLAN.md)
 
-## **Ferramentas**
+[Diagramas](https://github.com/micaellobo/trashTalker/tree/master/Documentacao/Diagramas)
+
+[Mockups](https://github.com/micaellobo/trashTalker/tree/master/Documentacao/Mockups)
 
 
-* **GitLab** – Controlo de versões, definição e distribuição das tarefas atribuídas aos elementos da equipa
-* **Microsoft Teams** – Plataforma de comunicação dos elementos da equipa
-* **Zoom** - Plataforma de comunicação dos elementos da equipa
+## **Technologies**
+
+* **Angular** - Web application to manage all the business logic
+* **Android** - Mobile application for the worker to register the collection of a garbage container
+* **.NET** - For the development of the Web API
+* **SQL** - Relational database for the data persistance
+* **Arduino IOT Cloud** - Cloud IoT service used to communicate with sensors
 
 
-## **Tecnologias**
-
-
-* **Angular** - Framework para lado do cliente
-* **Android** - Sistema operativo utilizado pelo cliente no dispositvo mobile
-* **.NET** - Plataforma de desenvolvimento da WEB API
-* **SQL** - Base de dados relacional utilizada para o armazenamento dos dados
-* **Arduino IOT Cloud** - Serviço IoT da cloud utilizado para comunicação com os sensores
-
-
-## **Equipa**
-
+## **Team**
 
 * João Lopes
 * Tiago Leite
@@ -54,7 +40,7 @@ Para iniciar o projeto devem ser seguidos os seguintes passos:
 * Flávio Costa
 
 
-## **Arquitetura do projeto**
+## **Project Arquitecture**
 
 <img src="https://github.com/micaellobo/trashTalker/raw/master/Documentacao/Diagramas/ProjectArchitecture.png" alt="ProjectArchitecture" width="900"/>
 
