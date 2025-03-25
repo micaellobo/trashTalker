@@ -35,7 +35,7 @@ This project aims to develop an application that is able to manage and monitor g
 
 * João Lopes
 * Tiago Leite
-* João Bragança
+* [João Bragança](https://github.com/joaobraganca555)
 * Micael Sampaio
 * Flávio Costa
 
